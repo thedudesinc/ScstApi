@@ -4,7 +4,7 @@
 
 Node.js
 
-## Installation
+## INSTALLATION
 
 Before your run the application, you will need a .env file at the root with the following variables: `PORT, DATABASE_URL`.
 
