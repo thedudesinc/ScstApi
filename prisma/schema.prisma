@@ -1,0 +1,37 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model teamkills {
+  id               Int      @id @default(autoincrement())
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  matchId          String
+  matchType        String
+  offender         String
+  victim           String
+  offenderOperator String
+  victimOperator   String
+  offenderKD       String
+  victimKD         String
+  round            Int      @default(1)
+}
+
+model matches {
+  id           Int      @id @default(autoincrement())
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  matchId      String
+  matchType    String
+  players      String
+  roundsPlayed Int      @default(0)
+  isVictory    Boolean  @default(false)
+}
