@@ -1,7 +1,7 @@
 {
     "configurations": [
         {
-            "name": "Example",
+            "name": "ScstApi",
             "type": "pwa-node",
             "request": "launch",
             "runtimeExecutable": "node",
