@@ -35,6 +35,7 @@ teamkillRouter.get("/:id", async (req: Request, res: Response) => {
 // create teamkill
 teamkillRouter.post("/", async (req: Request, res: Response) => {
   try {
+    console.log("create teamkill was called");
     const item: Teamkill = req.body;
 
     const newTeamkill = await TeamkillService.create(item);
