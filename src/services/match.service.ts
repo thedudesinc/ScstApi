@@ -14,7 +14,23 @@ export const find = async (id: number): Promise<Match> => {
 };
 
 export const create = async (match: Match): Promise<Match> => {
-  return await prisma.matches.create({ data: match });
+  const existing = await prisma.matches.findMany({
+    where: {
+      gameMatchId: {
+        equals: match.gameMatchId,
+      },
+    },
+  });
+
+  let response: Match;
+
+  if (existing && existing.length > 0) {
+    response = await update(existing[0].id, match);
+  } else {
+    response = await prisma.matches.create({ data: match });
+  }
+
+  return response;
 };
 
 export const update = async (id: number, match: Match): Promise<Match> => {
