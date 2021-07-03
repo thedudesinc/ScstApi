@@ -32,8 +32,22 @@ model matches {
   owMatchId    String
   gameMode     String
   map          String
-  players      String
-  roundsPlayed Int      @default(0)
+  roundsPlayed Int
   blueScore    Int
   orangeScore  Int
+}
+
+model players {
+  id        Int @id @default(autoincrement())
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  matchId   Int // foreign key to Matches table
+  name      String
+  team      String
+  operator  String
+  kills     Int
+  headshots Int
+  deaths    Int
+  score     Int
+  defuser   Int
 }

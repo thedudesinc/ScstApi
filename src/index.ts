@@ -25,6 +25,7 @@ app.use(cors());
 app.use(express.json());
 app.use("/api/teamkills", teamkillRouter);
 app.use("/api/matches", matchRouter);
+app.use("/api/players", playerRouter);
 
 /**
  * Server Activation
