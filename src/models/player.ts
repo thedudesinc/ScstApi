@@ -6,7 +6,7 @@ export interface Player {
   rosterPosition: string;
   name: string;
   team: string;
-  operator: string;
+  operator?: string;
   kills: number;
   headshots: number;
   deaths: number;

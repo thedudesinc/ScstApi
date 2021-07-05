@@ -45,7 +45,7 @@ model players {
   rosterPosition  String
   name            String
   team            String
-  operator        String
+  operator        String?
   kills           Int
   headshots       Int
   deaths          Int
