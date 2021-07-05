@@ -4,7 +4,7 @@ import { Player } from "../models/player";
 
 export const playerRouter = express.Router();
 
-// get playeres
+// get players
 playerRouter.get("/", async (req: Request, res: Response) => {
   try {
     const items: Player[] = await PlayerService.findAll();
@@ -45,7 +45,7 @@ playerRouter.post("/", async (req: Request, res: Response) => {
   }
 });
 
-// update playeres/:id
+// update players/:id
 playerRouter.put("/:id", async (req: Request, res: Response) => {
   const id: number = parseInt(req.params.id, 10);
 
@@ -67,7 +67,7 @@ playerRouter.put("/:id", async (req: Request, res: Response) => {
   }
 });
 
-// delete playeres/:id
+// delete players/:id
 playerRouter.delete("/:id", async (req: Request, res: Response) => {
   try {
     const id: number = parseInt(req.params.id, 10);

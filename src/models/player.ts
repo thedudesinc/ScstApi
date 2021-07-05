@@ -3,6 +3,7 @@ export interface Player {
   createdAt: Date;
   updatedAt: Date;
   matchId: string;
+  rosterPosition: string;
   name: string;
   team: string;
   operator: string;

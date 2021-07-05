@@ -4,6 +4,7 @@ import cors from "cors";
 import helmet from "helmet";
 import { teamkillRouter } from "./routers/teamkill.router";
 import { matchRouter } from "./routers/match.router";
+import { playerRouter } from "./routers/player.router";
 
 dotenv.config();
 
