@@ -10,7 +10,7 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model teamkills {
+model Teamkill {
   id               Int      @id @default(autoincrement())
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt
@@ -22,9 +22,10 @@ model teamkills {
   offenderKD       String
   victimKD         String
   round            Int
+  @@map(name: "teamkills")
 }
 
-model matches {
+model Match {
   id           Int      @id @default(autoincrement())
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
@@ -35,9 +36,10 @@ model matches {
   roundsPlayed Int
   blueScore    Int
   orangeScore  Int
+  @@map(name: "matches")
 }
 
-model players {
+model Player {
   id              Int @id @default(autoincrement())
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
@@ -45,10 +47,11 @@ model players {
   rosterPosition  String
   name            String
   team            String
-  operator        String?
+  operator        String
   kills           Int
   headshots       Int
   deaths          Int
   score           Int
   defuser         Int
+  @@map(name: "players")
 }
